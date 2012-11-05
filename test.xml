@@ -1,0 +1,25 @@
+Buildfile: /Users/smcwhorter/Documents/Android Applications/JenkinsProjectTest/build.xml
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 20.0.3
+ [checkenv] Installed at /Users/smcwhorter/Documents/Android Applications/android-sdk-macosx
+
+-setup:
+     [echo] Project Name: MainActivityTest
+  [gettype] Project Type: Test Application
+
+-test-project-check:
+
+test:
+     [echo] Running tests ...
+     [exec] 
+     [exec] com.cardinal.jenkinsproject.test.UtilsTest:..
+     [exec] Test results for InstrumentationTestRunner=..
+     [exec] Time: 0.023
+     [exec] 
+     [exec] OK (2 tests)
+     [exec] 
+     [exec] 
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
