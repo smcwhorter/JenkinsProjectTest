@@ -100,7 +100,7 @@
     </target>
      <target name="attach-target-project-jenkins">
     	<echo>Getting the target project</echo>
-		<mkdir dir="JenkinsProject"/>
+		
     	<copy todir="JenkinsProject/workspace">
     		<fileset dir="../../JenkinsProject/workspace"/>
   		</copy>
