@@ -24,6 +24,9 @@ public class UtilsTest extends AndroidTestCase {
    	
    	//Check if the two values are equal
    	assertEquals(expectedValue, returnedValue);
+   	
+   	//AndroidTestCase.
        }
+    
     
 }
