@@ -89,6 +89,16 @@
     <!-- version-tag: custom -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
     
+    <!-- Custom target to copy the target project into the unit test project workspace so Jenkins can compile it with ANT
+    Note: This must be executed before the debug target -->
+    <target name="attach-target-project">
+    	<echo>Getting the target project</echo>
+		<mkdir dir="JenkinsProject"/>
+    	<copy todir="JenkinsProject">
+    		<fileset dir="../JenkinsProject"/>
+  		</copy>
+    </target>
+    
     <!-- Custom target to pull the JUnit test results from the app package folder using ADB -->
 	<target name="fetch-test-report">
 		<echo>Downloading XML test report…</echo>
