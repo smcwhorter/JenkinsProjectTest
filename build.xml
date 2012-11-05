@@ -98,6 +98,13 @@
     		<fileset dir="../JenkinsProject"/>
   		</copy>
     </target>
+     <target name="attach-target-project-jenkins">
+    	<echo>Getting the target project</echo>
+		<mkdir dir="JenkinsProject"/>
+    	<copy todir="JenkinsProjectTest/workspace">
+    		<fileset dir="../../JenkinsProject"/>
+  		</copy>
+    </target>
     
     <!-- Custom target to pull the JUnit test results from the app package folder using ADB -->
 	<target name="fetch-test-report">
