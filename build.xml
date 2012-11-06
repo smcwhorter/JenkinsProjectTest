@@ -107,16 +107,21 @@
     </target>
      
 	<target name="start-emulator">
-		<parallel>
-			<daemons>
-	        	<exec executable="${emulator}">
-					<arg value="-avd"/>
-					<arg value="${jenkins-avd}"/>
-	            </exec>
-	        </daemons>
-	    </parallel>
-	</target>
-     
+	    <exec executable="${emulator}" failonerror="true">
+	        <arg value="-avd"/>
+	        <arg value="${my-avd}"/>
+	    </exec>
+    </target>
+    
+	<target name="kill-emulator">
+	    <exec excutable="${adb}" failonerror="true">
+	        <arg value="-s"/>
+	        <arg value="${emu-port}"/>
+	        <arg value="emu"/>
+	        <arg value="kill"/>
+	    </exec>
+    </target>
+    
     <!-- Custom target to pull the JUnit test results from the app package folder using ADB -->
 	<target name="fetch-test-report">
 		<echo>Downloading XML test report…</echo>
