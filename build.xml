@@ -105,7 +105,18 @@
     		<fileset dir="../../JenkinsProject/workspace"/>
   		</copy>
     </target>
-    
+     
+	<target name="start-emulator">
+		<parallel>
+			<daemons>
+	        	<exec executable="${emulator}">
+					<arg value="-avd"/>
+					<arg value="${jenkins-avd}"/>
+	            </exec>
+	        </daemons>
+	    </parallel>
+	</target>
+     
     <!-- Custom target to pull the JUnit test results from the app package folder using ADB -->
 	<target name="fetch-test-report">
 		<echo>Downloading XML test report…</echo>
